@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akslabtest-3f5c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akslabtest-3f5c"
+  template:
+    metadata:
+      labels:
+        app: "akslabtest-3f5c"
+    spec:
+      containers:
+        - name: "akslabtest-3f5c"
+          image: "arcdemo232.azurecr.io/akslabtest"
+          ports:
+          - containerPort: 80
